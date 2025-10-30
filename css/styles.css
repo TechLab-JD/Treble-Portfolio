@@ -9,26 +9,20 @@
 
 .carousel-btn {
   position: absolute;
-  top: 50%;                
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.4);
   border: none;
   font-size: 2.5rem;
-  cursor: pointer;
   color: red;
+  cursor: pointer;
   z-index: 100;
   padding: 0.5rem 1rem;
   border-radius: 50%;
-  pointer-events: all;     
 }
 
-.carousel-btn.left {
-  left: 10px;             
-}
-
-.carousel-btn.right {
-  right: 10px;            
-}
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
 
 html, body {
   margin: 0;
@@ -46,20 +40,25 @@ html, body {
   overflow: hidden;
 }
 
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
 .parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 8px;
-  height: 100vh;
-  width: 100vw;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
-  will-change: transform, opacity;
-  background: inherit; 
 }
 
 .parent.slide-left {
