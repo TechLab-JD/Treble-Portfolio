@@ -91,7 +91,7 @@ html, body {
 .div1 {
   border: solid 1px black;
   padding: 5%;
-  margin: 2%;
+  margin-left: 2%;  
 }
 
 .div2 {
@@ -100,7 +100,7 @@ html, body {
   grid-column-start: 2;
   grid-row-start: 2;
   border: solid 1px black;
-  margin: 2%;
+  margin-left: 2%;
 }
 
 .div3 {
@@ -108,7 +108,7 @@ html, body {
   grid-column-start: 1;
   grid-row-start: 2;
   border: solid 1px black;
-  margin: 2%;
+  margin-right: 2%;
 }
 
 .div4 {
@@ -116,7 +116,7 @@ html, body {
   grid-column-start: 2;
   grid-row-start: 1;
   border: solid 1px black;
-  margin: 2%;
+  margin-right: 2%;
 }
 
 .div1 a {
