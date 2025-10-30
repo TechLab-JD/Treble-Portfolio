@@ -1,3 +1,4 @@
+/* === Carousel Controls === */
 .carousel-controls {
   position: relative;
 }
@@ -11,25 +12,48 @@
   font-size: 2rem;
   cursor: pointer;
   color: red;
+  z-index: 100;
 }
 
 .carousel-btn.left { left: 10px; }
 .carousel-btn.right { right: 10px; }
 
-.parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
-    height: 100vh;    
-    width: 100vw;     
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.div1 a {
-  all: unset;
-  cursor: pointer;
-  color: initial;
-  text-decoration: none;
+.viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  height: 100vh;
+  width: 100vw;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  will-change: transform, opacity;
+  opacity: 1;
+}
+
+.parent.slide-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.parent.slide-right {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 .div1 {
@@ -38,23 +62,34 @@
 }
 
 .div2 {
-    grid-column: span 4 / span 4;
-    grid-row: span 4 / span 4;
-    grid-column-start: 2;
-    grid-row-start: 2;
-    border: solid 1px black;
+  grid-column: span 4 / span 4;
+  grid-row: span 4 / span 4;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  border: solid 1px black;
 }
 
 .div3 {
-    grid-row: span 4 / span 4;
-    grid-column-start: 1;
-    grid-row-start: 2;
-    border: solid 1px black;
+  grid-row: span 4 / span 4;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  border: solid 1px black;
 }
 
 .div4 {
-    grid-column: span 4 / span 4;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    border: solid 1px black;
+  grid-column: span 4 / span 4;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  border: solid 1px black;
+}
+
+.div1 a {
+  all: unset;
+  cursor: pointer;
+  color: inherit;       
+  text-decoration: none;
+}
+
+.div1 a:hover {
+  text-decoration: underline;
 }

@@ -42,3 +42,41 @@ const themes = [
     }
   }  
 ];
+
+
+let current = 0;
+const total = themes.length;
+const parent = document.querySelector('.parent');
+
+function applyTheme(index) {
+  const t = themes[index];
+  document.body.style.fontFamily = t.font;
+  document.body.style.background = t.colors.background;
+  document.body.style.color = t.colors.text;
+
+  document.querySelector('[data-section="main"]').innerHTML = t.content.main;
+  document.querySelector('[data-section="side"]').innerHTML = t.content.side;
+
+  document.querySelectorAll('a').forEach(a => {
+    a.style.color = t.colors.link || t.colors.text;
+  });
+}
+
+function slide(direction) {
+  // 1. Add slide class
+  parent.classList.add(direction === 'next' ? 'slide-left' : 'slide-right');
+
+  // 2. After animation ends, reset + apply new theme
+  setTimeout(() => {
+    parent.classList.remove('slide-left', 'slide-right');
+    current = (direction === 'next') 
+      ? (current + 1) % total 
+      : (current - 1 + total) % total;
+    applyTheme(current);
+  }, 800); // matches CSS transition duration
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => slide('next'));
+document.getElementById('prevBtn').addEventListener('click', () => slide('prev'));
+
+applyTheme(current);
