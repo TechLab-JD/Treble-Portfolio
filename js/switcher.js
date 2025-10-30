@@ -8,9 +8,9 @@ function applyTheme(index) {
   document.body.style.background = theme.colors.background;
   document.body.style.color = theme.colors.text;
 
-  document.querySelector('[data-section="header"]').textContent = theme.content.header;
-  document.querySelector('[data-section="main"]').textContent = theme.content.main;
-  document.querySelector('[data-section="side"]').textContent = theme.content.side;
+  document.querySelector('[data-section="header"]').innerHTML = theme.content.header;
+  document.querySelector('[data-section="main"]').innerHTML = theme.content.main;
+  document.querySelector('[data-section="side"]').innerHTML = theme.content.side;
 }
 
 document.getElementById('prevBtn').addEventListener('click', () => {
