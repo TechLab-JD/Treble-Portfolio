@@ -1,7 +1,7 @@
 const themes = [
   {
     font: "'Rockwell', serif",
-    colors: { background: "#0a0a0a", text: "#fff", color: "#fff" },
+    colors: { background: "#0a0a0a", text: "#fff", link: "#fff" },
     content: {
       header: `
       <h1>Samual B Hodgkinson</h1>
@@ -15,7 +15,7 @@ const themes = [
   },
   {
     font: "'Merriweather', serif",
-    colors: { background: "#838383ff", text: "#111" },
+    colors: { background: "#838383ff", text: "#111", link: "#111" },
     content: {
       header: `
       <h1>Samual B Hodgkinson</h1>
@@ -29,7 +29,7 @@ const themes = [
   },
   {
     font: "'Consolas', serif",
-    colors: { background: "#585757ff", text: "#111" },
+    colors: { background: "#585757ff", text: "#111", link: "#111" },
     content: {
       header: `
       <h1>Samual B Hodgkinson</h1>
