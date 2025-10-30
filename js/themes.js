@@ -19,7 +19,7 @@ const themes = [
     content: {
       header: `
       <h1>Samual B Hodgkinson</h1>
-      <h3>Illustrations</h3>
+      <h3>Design</h3>
       <a href="#">About</a>
       <a href="#">Contact</a>                  
       `,
@@ -33,7 +33,7 @@ const themes = [
     content: {
       header: `
       <h1>Samual B Hodgkinson</h1>
-      <h3>Illustrations</h3>
+      <h3>UI/UX</h3>
       <a href="#">About</a>
       <a href="#">Contact</a>       
       `,
