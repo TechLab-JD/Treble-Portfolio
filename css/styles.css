@@ -20,7 +20,16 @@
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 8px;
-    border: solid 1px black;
+    height: 100vh;    
+    width: 100vw;     
+}
+
+.div1 a {
+  all: unset;
+  cursor: pointer;
+  color: initial;
+  text-decoration: underline;
+  border: solid 1px red;
 }
 
 .div2 {
