@@ -37,6 +37,7 @@ html, body {
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  background-color: black;
 }
 
 .viewport {
@@ -100,7 +101,7 @@ html, body {
   grid-column-start: 2;
   grid-row-start: 2;
   border: solid 1px black;
-  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .div3 {
@@ -108,7 +109,7 @@ html, body {
   grid-column-start: 1;
   grid-row-start: 2;
   border: solid 1px black;
-  margin-right: 2%;
+  margin-left: 2%;
 }
 
 .div4 {
