@@ -24,12 +24,14 @@
   cursor: pointer;
   z-index: 999;
   pointer-events: all;
+  color: aqua;
 }
 
 .carousel-btn.left { left: 10px; }
 .carousel-btn.right { right: 10px; }
 
 html, body {
+  padding: 0.25%;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -89,6 +91,7 @@ html, body {
 .div1 {
   border: solid 1px black;
   padding: 5%;
+  margin: 2%;
 }
 
 .div2 {
@@ -97,6 +100,7 @@ html, body {
   grid-column-start: 2;
   grid-row-start: 2;
   border: solid 1px black;
+  margin: 2%;
 }
 
 .div3 {
@@ -104,6 +108,7 @@ html, body {
   grid-column-start: 1;
   grid-row-start: 2;
   border: solid 1px black;
+  margin: 2%;
 }
 
 .div4 {
@@ -111,6 +116,7 @@ html, body {
   grid-column-start: 2;
   grid-row-start: 1;
   border: solid 1px black;
+  margin: 2%;
 }
 
 .div1 a {
