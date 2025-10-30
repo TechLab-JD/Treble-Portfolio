@@ -1,0 +1,15 @@
+.carousel-controls {
+  position: relative;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.carousel-btn.left { left: 10px; }
+.carousel-btn.right { right: 10px; }
