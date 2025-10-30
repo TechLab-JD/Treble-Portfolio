@@ -1,7 +1,7 @@
 .carousel-controls {
   position: relative;
 }
-/*
+
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -10,12 +10,12 @@
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  z-index: 10;
   color: red;
 }
+
 .carousel-btn.left { left: 10px; }
 .carousel-btn.right { right: 10px; }
-*/
+
 .parent {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
