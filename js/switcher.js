@@ -1,57 +1,51 @@
 let currentIndex = 0;
-const totalThemes = themes.length;
-const parent = document.querySelector('.parent');
 
-function applyTheme(index) {
-  const theme = themes[index];
-
-  document.body.style.fontFamily = theme.font;
-  document.body.style.background = theme.colors.background;
-  document.body.style.color = theme.colors.text;
-
-  document.querySelector('[data-section="header"]').innerHTML = theme.content.header;
-  document.querySelector('[data-section="main"]').innerHTML = theme.content.main;
-  document.querySelector('[data-section="side"]').innerHTML = theme.content.side;
-
-  document.querySelectorAll('a').forEach(link => {
-    link.style.color = theme.colors.link || theme.colors.text;
-  });
+function applyThemeToElement(element, theme) {
+  element.querySelector('[data-section="header"]').innerHTML = theme.content.header;
+  element.querySelector('[data-section="main"]').innerHTML = theme.content.main;
+  element.querySelector('[data-section="side"]').innerHTML = theme.content.side;
+  element.style.fontFamily = theme.font;
+  element.style.background = theme.colors.background;
+  element.style.color = theme.colors.text;
+  element.querySelectorAll('a').forEach(a => a.style.color = theme.colors.link || theme.colors.text);
 }
 
-// Slide animation function
 function slide(direction) {
-  const className = direction === 'next' ? 'slide-next' : 'slide-prev';
-  parent.classList.add(className);
+  const oldSlide = parent.cloneNode(true);
+  const newSlide = parent.cloneNode(true);
 
+  const nextIndex = direction === 'next'
+    ? (currentIndex + 1) % themes.length
+    : (currentIndex - 1 + themes.length) % themes.length;
+
+  // Apply new theme to newSlide
+  applyThemeToElement(newSlide, themes[nextIndex]);
+
+  newSlide.classList.add('slide-enter');
+  newSlide.style.transition = 'transform 0.8s ease-in-out';
+
+  // Position the newSlide off-screen depending on direction
+  newSlide.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
+
+  document.querySelector('.viewport').appendChild(newSlide);
+
+  // Trigger reflow
+  void newSlide.offsetWidth;
+
+  // Animate both slides
+  oldSlide.style.transform = direction === 'next' ? 'translateX(-100%)' : 'translateX(100%)';
+  newSlide.style.transform = 'translateX(0)';
+
+  // Remove old slide after transition
   setTimeout(() => {
-    parent.classList.remove('slide-next', 'slide-prev');
-
-    currentIndex = direction === 'next'
-      ? (currentIndex + 1) % totalThemes
-      : (currentIndex - 1 + totalThemes) % totalThemes;
-
-    applyTheme(currentIndex);
-
-    // Position off-screen for new slide
-    parent.style.transition = 'none';
-    parent.style.transform = direction === 'next'
-      ? 'translateX(100%)'
-      : 'translateX(-100%)';
-    parent.style.opacity = 0;
-
-    // Force reflow
-    void parent.offsetWidth;
-
-    // Animate back to center
-    parent.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
-    parent.style.transform = 'translateX(0)';
-    parent.style.opacity = 1;
+    parent.replaceWith(newSlide);
+    parent = newSlide;
+    currentIndex = nextIndex;
   }, 800);
 }
 
-// Event listeners
 document.getElementById('nextBtn').addEventListener('click', () => slide('next'));
 document.getElementById('prevBtn').addEventListener('click', () => slide('prev'));
 
 // Initial theme
-applyTheme(currentIndex);
+applyThemeToElement(parent, themes[currentIndex]);
