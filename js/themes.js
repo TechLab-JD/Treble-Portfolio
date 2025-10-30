@@ -6,8 +6,8 @@ const themes = [
       header: `
       <h1>Samual B Hodgkinson</h1>
       <h3>Illustrations</h3>
-      <a href="#">About</a>
-      <a href="#">Contact</a>               
+      <a href="#"> >About</a>
+      <a href="#"> >Contact</a>               
       `,
       main: "Image Panel 1",
       side: "Details about Panel 1"
