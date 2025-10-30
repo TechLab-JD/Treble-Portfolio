@@ -6,6 +6,8 @@ const themes = [
       header: `
       <h1>Samual B Hodgkinson</h1>
       <h3>Illustrations</h3>
+      <a href="#">About</a>
+      <a href="#">Contact</a>      
       `,
       main: "Image Panel 1",
       side: "Details about Panel 1"
@@ -18,6 +20,8 @@ const themes = [
       header: `
       <h1>Samual B Hodgkinson</h1>
       <h3>Illustrations</h3>
+      <a href="#">About</a>
+      <a href="#">Contact</a>         
       `,
       main: "Image Panel 2",
       side: "Details about Panel 2"
@@ -30,6 +34,8 @@ const themes = [
       header: `
       <h1>Samual B Hodgkinson</h1>
       <h3>Illustrations</h3>
+      <a href="#">About</a>
+      <a href="#">Contact</a>   
       `,
       main: "Image Panel 3",
       side: "Details about Panel 3"
