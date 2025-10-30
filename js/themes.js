@@ -1,6 +1,6 @@
 const themes = [
   {
-    font: "'Poppins', sans-serif",
+    font: "'Poppins', serif",
     colors: { background: "#0a0a0a", text: "#fff", color: "#fff" },
     content: {
       header: `
