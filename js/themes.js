@@ -1,6 +1,6 @@
 const themes = [
   {
-    font: "'Poppins', serif",
+    font: "'Rockwell', serif",
     colors: { background: "#0a0a0a", text: "#fff", color: "#fff" },
     content: {
       header: `
@@ -28,7 +28,7 @@ const themes = [
     }
   },
   {
-    font: "'Merriweather', serif",
+    font: "'Consolas', serif",
     colors: { background: "#585757ff", text: "#111" },
     content: {
       header: `
