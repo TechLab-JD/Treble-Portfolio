@@ -8,6 +8,7 @@ function applyTheme(index) {
   document.body.style.background = theme.colors.background;
   document.body.style.color = theme.colors.text;
 
+  document.querySelector('[data-section="header"]').textContent = theme.content.header;
   document.querySelector('[data-section="main"]').textContent = theme.content.main;
   document.querySelector('[data-section="side"]').textContent = theme.content.side;
 }
